@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
+</head>
+<body>
+
+    <div class="sidebar">
+        <h4>Menú</h4>
+        <a href="index.html"><i class="fas fa-users"></i> Usuarios</a>
+        <a href="pagos.html"><i class="fas fa-credit-card"></i> Metodo de pago</a>
+        <a href="detalles_venta.html"><i class="fas fa-info-circle"></i> Orden de compras</a>
+        <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+        <a href="ventas.html"><i class="fas fa-chart-line"></i> Lista de ventas</a>
+      </div>
+      
+
+    <div class="container">
+        <h1> Productos</h1>
+        <ul id="productos-lista"></ul>
+
+        <h2 class="section-title">Crear Producto</h2>
+        <form id="crear-producto-form" class="formulario">
+            <input type="text" id="nombre-producto" placeholder="Nombre del producto" required class="input-field">
+            <input type="number" id="precio-producto" placeholder="Precio del producto" required step="0.01" class="input-field">
+            <input type="number" id="cantidad-producto" placeholder="Cantidad del producto" required class="input-field">
+            
+            <select id="categoria-producto" required class="input-field select-styled">
+                <option value="" disabled selected>Seleccione una categoría</option>
+                <option value="Alimentos">Alimentos</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Limpieza y Hogar">Limpieza y Hogar</option>
+                <option value="Cuidado personal">Cuidado personal</option>
+                <option value="Bebés y maternidad">Bebés y maternidad</option>
+                <option value="Mascotas">Mascotas</option>
+                <option value="Salud y bienestar">Salud y bienestar</option>
+            </select>
+            <button type="submit" class="btn-rosado">Crear</button>
+        </form>
+
+       <!-- Botón para abrir el modal -->
+<button onclick="document.getElementById('modal-modificar').style.display='block'" class="btn-rosado">✏️ Modificar </button>
+<button onclick="document.getElementById('modal-eliminar').style.display='block'" class="btn-rosado">🗑️ Eliminar </button>
+<!-- Modal -->
+<div id="modal-modificar" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="document.getElementById('modal-modificar').style.display='none'">&times;</span>
+
+    <h2 class="section-title">Modificar Producto</h2>
+    <form id="modificar-producto-form" class="formulario">
+      <input type="number" id="id-producto-modificar" placeholder="ID del producto" required class="input-field">
+      <input type="text" id="nombre-producto-modificar" placeholder="Nuevo nombre del producto" required class="input-field">
+      <input type="number" id="precio-producto-modificar" placeholder="Nuevo precio del producto" required step="0.01" class="input-field">
+      <input type="number" id="cantidad-producto-modificar" placeholder="Nueva cantidad del producto" required class="input-field">
+      
+      <select id="categoria-producto-modificar" required class="input-field select-styled">
+        <option value="" disabled selected>Seleccione una categoría</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Bebidas">Bebidas</option>
+        <option value="Limpieza y Hogar">Limpieza y Hogar</option>
+        <option value="Cuidado personal">Cuidado personal</option>
+        <option value="Bebés y maternidad">Bebés y maternidad</option>
+        <option value="Mascotas">Mascotas</option>
+        <option value="Salud y bienestar">Salud y bienestar</option>
+      </select>
+
+      <button type="submit" class="btn-rosado">Modificar</button>
+    </form>
+  </div>
+</div>
+
+
+      <!-- Modal -->
+<div id="modal-eliminar" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="document.getElementById('modal-eliminar').style.display='none'">&times;</span>
+  
+      <h2 class="section-title">🗑️ Eliminar Producto</h2>
+      <form id="eliminar-producto-form" class="formulario">
+        <input type="number" id="id-producto-eliminar" placeholder="ID del producto" required class="input-field">
+        <button type="submit" class="btn-rosado">Eliminar</button>
+      </form>
+    </div>
+  </div>
+
+    <script src="js/productos.js"></script>
+</body>
+</html>

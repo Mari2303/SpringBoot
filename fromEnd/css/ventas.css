@@ -1,0 +1,99 @@
+/* Fondo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef1f6;
+}
+
+/* Barra lateral */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  background-color: #f78fb3;
+  padding: 2rem 1rem;
+  color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a:hover {
+  background-color: #fca1c2;
+}
+
+/* Ajuste de contenido principal */
+.container {
+  margin-left: 250px;
+  padding: 2rem 1rem;
+}
+
+/* Encabezado rosado */
+.bg-rosado {
+  background-color: #f78fb3 !important;
+  color: white !important;
+}
+
+/* Botones rosados */
+.btn-rosado {
+  background-color: #f78fb3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.btn-rosado:hover {
+  background-color: #f66094;
+  color: white;
+}
+
+/* Tarjetas */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Tablas */
+table th {
+  background-color: #ffe4ed !important;
+  color: #333;
+}
+
+table td,
+table th {
+  vertical-align: middle;
+}
+
+/* Modales */
+.modal-header {
+  background-color: #f78fb3;
+  color: white;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+

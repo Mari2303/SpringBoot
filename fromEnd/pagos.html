@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pagos</title>
+    <link rel="stylesheet" href="css/pagos.css">
+  
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+</head>
+
+  <body class="bg-light">
+    <div class="sidebar">
+      <h4 class="text-white mb-4">Menú</h4>
+      <a href="index.html"><i class="fas fa-users"></i> Usuarios</a>
+      <a href="pagos.html"><i class="fas fa-credit-card"></i> Metodo de pago</a>
+      <a href="detalles_venta.html"><i class="fas fa-info-circle"></i> Orden de compra</a>
+      <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+      <a href="ventas.html"><i class="fas fa-chart-line"></i> Lista de ventas</a>
+    </div>
+    </nav>
+    <div class="container">
+      <h1 style="color: #ff1493; font-size: 2rem;">💳 Metodo de pago</h1>
+
+    <ul id="pagos-lista"></ul>
+
+    <h2> Pago</h2>
+    <form id="crear-pago-form">
+        <input type="number" id="id-venta" placeholder="ID de la venta" required>
+        <input type="text" id="metodo-pago" placeholder="Método de pago" required>
+        <input type="number" id="monto-pago" placeholder="Monto del pago" required step="0.01">
+        <button type="submit">Crear</button>
+    </form>
+
+    <div class="modal-buttons">
+        <button onclick="abrirModal('modalModificar')">Modificar </button>
+        <button onclick="abrirModal('modalEliminar')">Eliminar </button>
+      </div>
+    </div>
+  
+    <!-- MODAL MODIFICAR -->
+    <div id="modalModificar" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modalModificar')">&times;</span>
+        <h2>Modificar Pago</h2>
+        <form id="modificar-pago-form">
+          <input type="number" id="id-pago-modificar" placeholder="ID del pago" required />
+          <input type="number" id="id-venta-modificar" placeholder="ID de la venta" required />
+          <input type="text" id="metodo-pago-modificar" placeholder="Nuevo método de pago" required />
+          <input type="number" id="monto-pago-modificar" placeholder="Nuevo monto del pago" required step="0.01" />
+          <button type="submit">Modificar</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal('modalEliminar')">&times;</span>
+        <h2>Eliminar Pago</h2>
+        <form id="eliminar-pago-form">
+          <input type="number" id="id-pago-eliminar" placeholder="ID del pago" required />
+          <button type="submit">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  
+
+   
+
+<script src="js/pagos.js"></script>
+</body>
+</html>

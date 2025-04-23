@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/ventas.css">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<body class="bg-light">
+
+    <div class="sidebar">
+        <h4>Menú</h4>
+        <a href="index.html"><i class="fas fa-users"></i> Usuarios</a>
+        <a href="pagos.html"><i class="fas fa-credit-card"></i> Metodo de pago</a>
+        <a href="detalles_venta.html"><i class="fas fa-info-circle"></i> Orden de compra</a>
+        <a href="productos.html"><i class="fas fa-box"></i> Productos</a>
+        <a href="ventas.html"><i class="fas fa-chart-line"></i> Lista de ventas</a>
+      </div>
+      
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card mb-4 shadow rounded-4 border-0">
+          <div class="card-header bg-rosado text-white rounded-top-4">
+            <h2 class="mb-0">Lista de Ventas</h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>ID Venta</th>
+                  <th>ID Usuario</th>
+                  <th>Nombre Usuario</th>
+                  <th>Apellido Usuario</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+                    <tbody id="ventas-lista">
+                        <!-- Se llenará dinámicamente desde ventas.js -->
+                    </tbody>
+                </table>
+
+                <!-- Botones para abrir modales -->
+                <button class="btn.btn-rosado me-2" data-bs-toggle="modal" data-bs-target="#modalCrearVenta">Ventas</button>
+                <button class="btn .btn-rosado me-2" data-bs-toggle="modal" data-bs-target="#modalModificarVenta">Modificar </button>
+                <button class="btn " data-bs-toggle="modal" data-bs-target="#modalEliminarVenta">Eliminar </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Crear Venta -->
+    <div class="modal fade" id="modalCrearVenta" tabindex="-1" aria-labelledby="modalCrearVentaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="crear-venta-form" class="modal-content">
+                <div class="modal-header .btn-rosado text-white">
+                    <h5 class="modal-title" id="modalCrearVentaLabel">Crear Venta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="id-usuario" class="form-control mb-3" placeholder="ID del usuario" required>
+                    <input type="date" id="fecha-venta" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn .btn-rosado">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Modificar Venta -->
+    <div class="modal fade" id="modalModificarVenta" tabindex="-1" aria-labelledby="modalModificarVentaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="modificar-venta-form" class="modal-content">
+                <div class="modal-header.btn-rosado text-white">
+                    <h5 class="modal-title" id="modalModificarVentaLabel">Modificar Venta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="id-venta-modificar" class="form-control mb-3" placeholder="ID de la venta" required>
+                    <input type="number" id="id-usuario-modificar" class="form-control mb-3" placeholder="ID del usuario" required>
+                    <input type="date" id="fecha-venta-modificar" class="form-control" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn .btn-rosado text-white">Modificar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Venta -->
+    <div class="modal fade" id="modalEliminarVenta" tabindex="-1" aria-labelledby="modalEliminarVentaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="eliminar-venta-form" class="modal-content">
+                <div class="modal-header .btn-rosado text-white">
+                    <h5 class="modal-title" id="modalEliminarVentaLabel">Eliminar Venta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="number" id="id-venta-eliminar" class="form-control" placeholder="ID de la venta" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn .btn-rosado">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS + tu script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/ventas.js"></script>
+
+</body>
+</html>
