@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ventasProcductos.demo.model.DetallesVenta;
 import com.ventasProcductos.demo.service.DetallesVentaService;
 import com.ventasProcductos.demo.service.ProductoService;
-import com.ventasProcductos.demo.service.DetallesVentaService;
+
 
 @RestController
 @RequestMapping("/api/detalles_venta")
