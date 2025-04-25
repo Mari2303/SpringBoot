@@ -40,6 +40,7 @@ public class PagosController {
         return pagosService.save(pagos);
     }
 
+    
     @PutMapping("/{id}")
     public ResponseEntity<Pagos> updatePagos(@PathVariable int id, @RequestBody Pagos pagos) {
         if (!pagosService.findById(id).isPresent()) {
