@@ -62,3 +62,17 @@ body {
   border-color: #f06292;
   box-shadow: 0 0 0 0.2rem rgba(240, 98, 146, 0.25);
 }
+
+
+.titulo-usuarios {
+  font-size: 1.8rem;
+ color: #ec407a !important;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

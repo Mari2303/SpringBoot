@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <td>${usuario.numeroDocumento}</td>
                         <td>${usuario.numeroCelular}</td>
                         <td>
-                            <button class="btn btn-primary btn-sm" onclick="mostrarEditarModal(${usuario.id}, '${usuario.nombre}', '${usuario.apellido}', '${usuario.numeroCelular}')">Modificar</button>
+                            <button class="btn  btn-sm" onclick="mostrarEditarModal(${usuario.id}, '${usuario.nombre}', '${usuario.apellido}', '${usuario.numeroCelular}')">Modificar</button>
                         </td>
                     `;
                     lista.appendChild(fila);

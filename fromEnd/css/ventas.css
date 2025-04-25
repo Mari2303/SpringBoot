@@ -1,99 +1,187 @@
-/* Fondo general */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fef1f6;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
 }
 
-/* Barra lateral */
+
+
 .sidebar {
+  width: 250px;
+  height: 100vh;
   position: fixed;
+  background-color: #ffc0cb;
+  padding: 30px 20px;
   top: 0;
   left: 0;
-  width: 230px;
-  height: 100vh;
-  background-color: #f78fb3;
-  padding: 2rem 1rem;
-  color: white;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
 }
 
 .sidebar h4 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: white;
+  font-size: 1.7rem;
+  color: #fff;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 25px;
+  margin-top: -10px;
+ 
 }
+
+
 
 .sidebar a {
   display: block;
-  color: white;
+  padding: 16px 20px;
+  color: #fff;
   text-decoration: none;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  transition: background 0.3s;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: #f06292;
+  transition: background-color 0.3s;
 }
 
 .sidebar a:hover {
-  background-color: #fca1c2;
+  background-color: #ec407a;
 }
 
-/* Ajuste de contenido principal */
+
+.sidebar a:hover {
+  background-color: #ec407a;
+  transform: translateX(5px);
+}
+
+
+/* CONTENIDO PRINCIPAL */
 .container {
   margin-left: 250px;
-  padding: 2rem 1rem;
+  padding: 30px;
+  max-width: 1000px;
 }
 
-/* Encabezado rosado */
-.bg-rosado {
-  background-color: #f78fb3 !important;
-  color: white !important;
-}
-
-/* Botones rosados */
-.btn-rosado {
-  background-color: #f78fb3;
-  color: white;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.6rem;
-  transition: all 0.3s ease;
-}
-
-.btn-rosado:hover {
-  background-color: #f66094;
-  color: white;
-}
-
-/* Tarjetas */
+/* CARDS */
 .card {
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   border: none;
-  border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-/* Tablas */
-table th {
-  background-color: #ffe4ed !important;
+.card-header {
+  background-color: #f06292;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.card-body {
+  background-color: #f6f2f4;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 50px;
+  border: #e04574;
+  border-radius: 20px;
+  margin-left: 100px !important;
+  width: 100% !important;
+  height: 100px !important;
+}
+
+/* TABLA */
+.table {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100% !important;
+  border: #ea5799 !important;
+  margin-right: 50% !important;
+  
+
+}
+
+.table thead {
+  background-color: #ffb6c1;
   color: #333;
 }
 
-table td,
-table th {
+.table th,
+.table td {
+  text-align: center;
   vertical-align: middle;
 }
 
-/* Modales */
-.modal-header {
-  background-color: #f78fb3;
+/* BOTONES */
+.btn {
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 5px 5px !important;
+  background-color: #ff66b2;
+  border-color: #ff66b2;
+;
+}
+
+
+.titulo-ventas {
+  font-size: 2rem;
+  color: #ec407a !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.btn-success {
+  background-color: #ff66b2;
+  border-color: #ff66b2;
+}
+
+.btn-success:hover {
+  background-color: #e0559c;
+  border-color: #e0559c;
+}
+
+.btn-warning {
+  background-color: #ff9baf;
+  border-color: #ff9baf;
   color: white;
-  border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
 }
 
-.modal-footer {
-  border-top: none;
+.btn-warning:hover {
+  background-color: #e98999;
+  border-color: #e98999;
 }
 
+.btn-danger {
+  background-color: #ff4f85;
+  border-color: #ff4f85;
+}
 
+.btn-danger:hover {
+  background-color: #e04574;
+  border-color: #e04574;
+}
+
+/* MODALES */
+.modal-header {
+  background-color: #f06292;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-footer .btn {
+  border-radius: 50px;
+}
+
+.modal-body input {
+  margin-bottom: 15px;
+}
+
+/* FORMULARIOS */
+.form-control:focus {
+  border-color: #f06292;
+  box-shadow: 0 0 0 0.2rem rgba(240, 98, 146, 0.25);
+}
