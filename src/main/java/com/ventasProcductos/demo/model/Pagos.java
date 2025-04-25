@@ -18,7 +18,7 @@ public class Pagos {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "id_venta")
+    @JoinColumn(name = "venta_id", nullable = false)
     private Venta venta;
 
     @Column(name = "metodo_pago", nullable = false)
@@ -27,7 +27,7 @@ public class Pagos {
     @Column(name = "monto", nullable = false)
     private double monto;
 
-    @Column(name = "fecha_pago", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "fecha_pago",  columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaPago;
 
     // Getters y Setters

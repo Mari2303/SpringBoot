@@ -34,4 +34,23 @@ public class DetallesVentaService {
     public void deleteById(int id) {
         detallesVentaRepository.deleteById(id);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 }
