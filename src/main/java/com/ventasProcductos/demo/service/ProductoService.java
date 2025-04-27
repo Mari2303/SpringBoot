@@ -25,13 +25,37 @@ public class ProductoService {
         return productoRepository.findById(id);
     }
 
-    // Guardar o actualizar un producto
-    public Producto save(Producto producto) {
-        return productoRepository.save(producto);
+// Guardar o actualizar un producto con validaciones manuales
+public Producto save(Producto producto) {
+    // Validaciones de campos vacíos
+    if (producto.getNombre() == null || producto.getNombre().trim().isEmpty()) {
+        throw new IllegalArgumentException("El nombre del producto no puede estar vacío.");
     }
 
-    // Eliminar un producto por ID
-    public void deleteById(int id) {
-        productoRepository.deleteById(id);
+    if (producto.getCategoria() == null || producto.getCategoria().trim().isEmpty()) {
+        throw new IllegalArgumentException("La categoría del producto no puede estar vacía.");
     }
+    if (producto.getPrecio() <= 0) {
+        throw new IllegalArgumentException("El precio del producto debe ser mayor que cero.");
+    }
+    if (producto.getCantidad() < 0) {
+        throw new IllegalArgumentException("La cantidad del producto no puede ser negativa.");
+    }
+
+
+    // Validación de nombre duplicado
+    boolean existeProducto = productoRepository.existsByNombre(producto.getNombre());
+    if (existeProducto) {
+        throw new IllegalArgumentException("Ya existe un producto con el mismo nombre.");
+    }
+
+    return productoRepository.save(producto);
+}
+
+// Eliminar un producto por ID
+public void deleteById(int id) {
+    productoRepository.deleteById(id);
+}
+
+
 }
