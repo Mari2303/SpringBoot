@@ -1,13 +1,15 @@
 package com.ventasProcductos.demo.model;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Column;
-import java.time.LocalDateTime;
+import jakarta.persistence.PrePersist;
 
 @Entity
 public class Pagos {
@@ -27,8 +29,13 @@ public class Pagos {
     @Column(name = "monto", nullable = false)
     private double monto;
 
-    @Column(name = "fecha_pago",  columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+      @Column(name = "fecha_pago", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime fechaPago;
+
+    @PrePersist
+    protected void onCreate() {
+        this.fechaPago = LocalDateTime.now();
+    }
 
     // Getters y Setters
     public int getId() {

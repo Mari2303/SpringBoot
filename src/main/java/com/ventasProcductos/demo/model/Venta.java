@@ -1,6 +1,7 @@
 package com.ventasProcductos.demo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,7 +21,7 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Date fecha;
+    private LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_usuario")
@@ -35,11 +36,11 @@ public class Venta {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
