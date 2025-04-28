@@ -29,13 +29,6 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-    public Usuario save(Usuario usuario) {
-        // Verificar si el número de documento ya existe solo si es un nuevo usuario
-        if (usuario.getId() == 0 && usuarioRepository.findByNumeroDocumento(usuario.getNumeroDocumento()) != null) {
-            throw new IllegalArgumentException("El número de documento ya está registrado.");
-        }
-        return usuarioRepository.save(usuario);
-    }
 
     // Eliminar un usuario por ID
     public void deleteById(int id) {
@@ -48,25 +41,46 @@ public class UsuarioService {
     public Usuario findByNumeroDocumento(int numeroDocumento) {
         return usuarioRepository.findByNumeroDocumento(numeroDocumento);
     }
-   
-    // Actualizar el número de documento de un usuario
-public Usuario updateNumeroDocumento(int numeroDocumento, int nuevoNumeroDocumento) {
-    Usuario usuario = usuarioRepository.findByNumeroDocumento(numeroDocumento);
-    if (usuario == null) {
-        throw new IllegalArgumentException("Usuario no encontrado");
-    }
-    usuario.setNumeroDocumento(nuevoNumeroDocumento);
-    return usuarioRepository.save(usuario);
-}
+
+
+    public Usuario updateNumeroDocumento(int numeroDocumentoActual, int nuevoNumeroDocumento) {
+        Usuario usuario = usuarioRepository.findByNumeroDocumento(numeroDocumentoActual);
+        if (usuario == null) {
+            throw new IllegalArgumentException("Usuario no encontrado");
+        }
     
+        usuario.setNumeroDocumento(nuevoNumeroDocumento);
+        return usuarioRepository.save(usuario);
+    }
+    
+    public Usuario save(Usuario usuario) {
+        // Validaciones de campos vacíos o nulos
+        if (usuario.getNombre() == null || usuario.getNombre().trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del usuario no puede estar vacío.");
+        }
+        if (usuario.getApellido() == null || usuario.getApellido().trim().isEmpty()) {
+            throw new IllegalArgumentException("El apellido del usuario no puede estar vacío.");
+        }
+        if (usuario.getNumeroDocumento() == null) {
+            throw new IllegalArgumentException("El número de documento no puede ser nulo.");
+        }
+        if (usuario.getNumeroCelular() == null) {
+            throw new IllegalArgumentException("El número de celular no puede ser nulo.");
+        }
+    
+        // Validación de número de documento duplicado (solo si es nuevo)
+        if ((usuario.getId() == null || usuario.getId() == 0) && usuarioRepository.existsByNumeroDocumento(usuario.getNumeroDocumento())) {
+            throw new IllegalArgumentException("El número de documento ya está registrado.");
+        }
+        
+    
+        return usuarioRepository.save(usuario);
+    }
+
     //eliminar un usuario por numero de documento
     public void deleteByNumeroDocumento(int numeroDocumento) {
         Usuario usuario = usuarioRepository.findByNumeroDocumento(numeroDocumento);
         usuarioRepository.delete(usuario);
-    }
-
-    
-
-    
+}
 
 }

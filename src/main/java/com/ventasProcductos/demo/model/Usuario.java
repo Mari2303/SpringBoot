@@ -14,13 +14,31 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String nombre;
     private String apellido;
      @Column(unique = true)
-    private int numeroDocumento;
+    private Integer numeroDocumento;
     
     private String numeroCelular; // Nuevo campo
+
+
+
+     // Constructor sin argumentos
+     public Usuario() {
+    }
+
+
+
+     // Constructor completo
+     public Usuario(Integer id, String nombre, String apellido, Integer numeroDocumento, String numeroCelular) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numeroDocumento = numeroDocumento;
+        this.numeroCelular = numeroCelular;
+    }
+
 
     // Getters y Setters
     public String getNumeroCelular() {
@@ -42,23 +60,20 @@ public class Usuario {
 
 
     // Getters y Setters
-    public int getNumeroDocumento() {
+    public Integer getNumeroDocumento() {
         return numeroDocumento;
     }
-    public void setNumeroDocumento(int numeroDocumento) {
+    public void setNumeroDocumento(Integer numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
     }
 
-    // Constructor sin argumentos
-    public Usuario() {
-    }
-
+   
     // Getters y Setters
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -11,7 +11,8 @@ import com.ventasProcductos.demo.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-    Usuario findByNumeroDocumento(int numeroDocumento);
+    Usuario findByNumeroDocumento(Integer numeroDocumento);
+    boolean existsByNumeroDocumento(Integer numeroDocumento);
 
     @Query("SELECT u FROM Usuario u WHERE LOWER(u.nombre) LIKE LOWER(CONCAT('%', :keyword, '%')) " +
            "OR LOWER(u.apellido) LIKE LOWER(CONCAT('%', :keyword, '%')) " +
