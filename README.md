@@ -14,14 +14,14 @@ Este es un proyecto de tienda en línea desarrollado con Spring Boot. Permite la
 
 1. Clonar el repositorio:
    ```bash
-   https://github.com/DanielCaicedo26/TrabajoSprintBoot.git
+  https://github.com/Mari2303/SpringBoot.git
    ```
 
 2. Configurar la base de datos en `application.properties`:
    ```properties
    spring.application.name=demo
    # URL del servidor y base de datos
-   spring.datasource.url=jdbc:mysql://localhost:3306/ventaproducto
+   spring.datasource.url=jdbc:mysql://localhost:3306/tiendaSpring
    # Usuario de la base de datos
    spring.datasource.username=root
    # Contraseña del usuario de la base de datos
@@ -46,6 +46,6 @@ Este es un proyecto de tienda en línea desarrollado con Spring Boot. Permite la
 | POST    | /pedidos         | Crear pedido          |
 
 ## Contacto
-Desarrollado por Daniel Caicedo Trujillo. Para consultas, envía un correo a Daniel3204155185@gmail.com
+Desarrollado por Maria Alejandra Marin . Para consultas, envía un correo a mariaalejan1080@gmail.com
 
 
